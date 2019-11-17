@@ -4,7 +4,7 @@ set -e
 # Use on master node
 kubectl apply -f dashboard.yaml
 kubectl apply -f new_user.yaml
-kubectl -n kubernetes-dashboard describe secret $(kubectl -n kubernetes-dashboard get secret | grep admin-user | awk '{print $1}') >> token
+kubectl -n kubernetes-dashboard describe secret $(kubectl -n kubernetes-dashboard get secret | grep admin-user | awk '{print $1}') >> dashboard_token
 
 # Download helm
 wget https://get.helm.sh/helm-v2.16.1-linux-amd64.tar.gz
