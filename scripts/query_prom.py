@@ -6,7 +6,7 @@ def make_query(query):
     url = "http://142.150.199.211:30001/api/v1/query"
 
     response = requests.get(
-        f"{url}", params={"query": "container_network_receive_packets_total"}
+        f"{url}", params={"query": query}
     )
 
     return response.json()
